@@ -1,0 +1,16 @@
+[package]
+name = "folder_report"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[dependencies]
+# 로컬 시간대 포맷용 (std에는 로컬 시간 변환이 없음)
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.release]
+opt-level = 3
+lto = true
